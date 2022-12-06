@@ -21,9 +21,13 @@ return new class extends Migration
             $table->float('price_pack');
             $table->integer('consumption');
             $table->float('price_goal_now');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('cracking_id')->references('id')->on('crackings')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('cracking_id');
+
         });
     }
 

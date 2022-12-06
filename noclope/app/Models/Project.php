@@ -16,7 +16,7 @@ class Project extends Model
         'consumption',
         'price_goal_now',
         'user_id',
-        'project_id',
+        'transaction_id',
         'cracking_id',
     ];
 

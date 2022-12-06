@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('crackings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->timestamp('date_transaction');
-            $table->integer('amount');
-           
+            $table->integer('number_smoked_cigarette');
+            $table->timestamp('date_cracking');
             
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('crackings');
     }
 };

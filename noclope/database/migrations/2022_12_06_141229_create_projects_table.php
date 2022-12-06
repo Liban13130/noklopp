@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->timestamp('date_transaction');
-            $table->integer('amount');
-           
-            
+            $table->string('goal');
+            $table->float('price_goal');
+            $table->float('price_pack');
+            $table->integer('consumption');
+            $table->float('price_goal_now');
+          
+
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('projects');
     }
 };

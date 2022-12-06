@@ -14,6 +14,7 @@ class Project extends Model
         'price_goal',
         'price_pack',
         'consumption',
+        'price_goal_now',
         'user_id',
     ];
 

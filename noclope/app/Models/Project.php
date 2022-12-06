@@ -16,10 +16,20 @@ class Project extends Model
         'consumption',
         'price_goal_now',
         'user_id',
+        'project_id',
+        'cracking_id',
     ];
 
     public function user() 
     { 
         return $this->belongsTo(User::class,'user_id','id'); 
+    }
+    public function transaction() 
+    { 
+        return $this->belongsTo(Transaction::class,'project_id','id'); 
+    }
+    public function Cracking() 
+    { 
+        return $this->belongsTo(Cracking::class,'cracking_id','id'); 
     }
 }

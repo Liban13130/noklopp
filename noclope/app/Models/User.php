@@ -56,9 +56,9 @@ class User extends Authenticatable
     { 
         return $this->hasMany(Transaction::class,'user_id','id'); 
     }
-    public function craquings() 
+    public function crackings() 
     { 
-        return $this->hasMany(Craquing::class,'user_id','id'); 
+        return $this->hasMany(Cracking::class,'user_id','id'); 
     }
     public function contacts() 
     { 

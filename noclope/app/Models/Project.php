@@ -28,7 +28,7 @@ class Project extends Model
     { 
         return $this->belongsTo(Transaction::class,'project_id','id'); 
     }
-    public function Cracking() 
+    public function cracking() 
     { 
         return $this->belongsTo(Cracking::class,'cracking_id','id'); 
     }

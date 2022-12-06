@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('crackings', function (Blueprint $table) {
             $table->id();
-            $table->string('lastname');
-            $table->string('firstname');
-            $table->string('email')->unique();
-            $table->string('number_cb');
-            $table->timestamp('date_expiry');
-            $table->string('type_user');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
+            $table->integer('number_smoked_cigarette');
+            $table->timestamp('date_cracking');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('project_id');
         });
     }
@@ -36,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('crackings');
     }
 };

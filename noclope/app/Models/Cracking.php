@@ -10,11 +10,10 @@ class Cracking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'number_phone',
-        'lastname',
-        'firstname',
-        'project_id',
+        'number_smoked_cigarette',
+        'date_cracking',
         'user_id',
+        'project_id',
     ];
 
     public function user() 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class User extends Authenticatable
 {
@@ -18,9 +19,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'lastname',
+        'firstname',
         'email',
         'password',
+        'number_cb',
+        'date_expiry',
+        'type_user',
+        'project_id',
     ];
 
     /**
@@ -41,4 +47,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function projects() 
+    { 
+        return $this->hasOne(Project::class,'user_id','id'); 
+    }
+    public function transactions() 
+    { 
+        return $this->hasMany(Transaction::class,'user_id','id'); 
+    }
+    public function craquings() 
+    { 
+        return $this->hasMany(Craquing::class,'user_id','id'); 
+    }
+    public function contacts() 
+    { 
+        return $this->hasMany(Contact::class,'user_id','id'); 
+    }
 }
